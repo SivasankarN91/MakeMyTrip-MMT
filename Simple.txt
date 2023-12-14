@@ -1,2 +1,6 @@
 first case
+<<<<<<< HEAD
  2
+=======
+ 4
+>>>>>>> TrainMMT
