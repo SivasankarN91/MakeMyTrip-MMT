@@ -5,9 +5,12 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 import com.makemytrip.baseclass.BaseClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 @RunWith(Cucumber.class)
@@ -34,6 +37,9 @@ public class RunWithChrome extends BaseClass {
 	@AfterClass
 	public static void report() {
 		extent.flush();
-		driver.quit();
+//		driver.quit();
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		driver.get("https://www.makemytrip.com");
 	}
 }
